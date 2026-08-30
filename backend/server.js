@@ -47,7 +47,7 @@ app.use("/api/tenancies", tenancyRoutes);
 
 // ✅ BASE ROUTE
 app.get("/", (req, res) => {
-  res.send("Backend is running...");
+  res.send("Backend is running — DeployGuard lifecycle certification generation B");
 });
 
 // ✅ DB CONNECT
