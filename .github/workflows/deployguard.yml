@@ -24,7 +24,7 @@ permissions:
   id-token: write
 jobs:
   deploy:
-    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@005e87bef174977e9cf7e4d4316e3c352285f3a2
+    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@375612b19b151134617fdb990928fa4b4348bf9d
     with:
       deployment_action: ${{ inputs.deployment_action }}
       deployment_operation_id: ${{ inputs.deployment_operation_id }}
