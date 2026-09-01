@@ -16,7 +16,6 @@ on:
       vpc_id: { required: true, type: string }
       public_subnet_ids: { required: true, type: string }
       terraform_state_bucket: { required: true, type: string }
-      platform_port: { required: true, type: string }
       control_plane_sha: { required: true, type: string }
       result_contract_version: { required: true, type: string }
 permissions:
@@ -24,7 +23,7 @@ permissions:
   id-token: write
 jobs:
   deploy:
-    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@a9bcc72df2047de64cb4034960d4df72da3e9c1f
+    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@a077458565d27a4c2cf4b039f68908f1b71052e3
     with:
       deployment_action: ${{ inputs.deployment_action }}
       deployment_operation_id: ${{ inputs.deployment_operation_id }}
@@ -40,6 +39,5 @@ jobs:
       vpc_id: ${{ inputs.vpc_id }}
       public_subnet_ids: ${{ inputs.public_subnet_ids }}
       terraform_state_bucket: ${{ inputs.terraform_state_bucket }}
-      platform_port: ${{ inputs.platform_port }}
       control_plane_sha: ${{ inputs.control_plane_sha }}
       result_contract_version: ${{ inputs.result_contract_version }}
