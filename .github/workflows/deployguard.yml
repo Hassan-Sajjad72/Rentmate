@@ -1,4 +1,5 @@
 name: DeployGuard
+run-name: DeployGuard ${{ inputs.deployment_operation_id }}
 on:
   workflow_dispatch:
     inputs:
@@ -18,12 +19,13 @@ on:
       terraform_state_bucket: { required: true, type: string }
       control_plane_sha: { required: true, type: string }
       result_contract_version: { required: true, type: string }
+      release_only: { required: true, type: string }
 permissions:
   contents: read
   id-token: write
 jobs:
   deploy:
-    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@371fd85063d8206e7560c7a63a3a752248e2b331
+    uses: Hassan-Sajjad72/Deploy-Guard-dev/.github/workflows/deployguard-reusable.yml@23292cc4e0cedaf35c5b62f5f3dfbd8b0c6db37b
     with:
       deployment_action: ${{ inputs.deployment_action }}
       deployment_operation_id: ${{ inputs.deployment_operation_id }}
@@ -41,3 +43,4 @@ jobs:
       terraform_state_bucket: ${{ inputs.terraform_state_bucket }}
       control_plane_sha: ${{ inputs.control_plane_sha }}
       result_contract_version: ${{ inputs.result_contract_version }}
+      release_only: ${{ inputs.release_only }}
